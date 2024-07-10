@@ -21,7 +21,7 @@ const Register = () => {
     setError(null);
 
     try {
-      const res = await axios.post('https://mern-project-3-fjd3.onrender.com/api/users/register', { name, email, password });
+      const res = await axios.post('http://localhost:5000/api/users/register', { name, email, password });
       console.log(res.data);
       navigate('/login');
     } catch (err) {
