@@ -8,7 +8,7 @@ const AuctionList = ({ user }) => {
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const res = await axios.get('https://mern-project-3-fjd3.onrender.com/api/auctions');
+        const res = await axios.get('http://localhost:5000/api/auctions');
         setAuctions(res.data);
       } catch (err) {
         console.error(err);
@@ -20,7 +20,7 @@ const AuctionList = ({ user }) => {
 
   const placeBid = async (auctionId, newBid) => {
     try {
-      await axios.put(`https://mern-project-3-fjd3.onrender.com/api/auctions/bid/${auctionId}`, { currentBid: newBid });
+      await axios.put(`http://localhost:5000/api/auctions/bid/${auctionId}`, { currentBid: newBid });
       setAuctions(auctions.map(auction => auction._id === auctionId ? { ...auction, currentBid: newBid } : auction));
     } catch (err) {
       console.error('Placing bid failed', err);
@@ -29,7 +29,7 @@ const AuctionList = ({ user }) => {
 
   const deleteAuction = async (auctionId) => {
     try {
-      await axios.delete(`https://mern-project-3-fjd3.onrender.com/api/auctions/${auctionId}`);
+      await axios.delete(`http://localhost:5000/api/auctions/${auctionId}`);
       setAuctions(auctions.filter(auction => auction._id !== auctionId));
     } catch (err) {
       console.error('Auction deletion failed', err);
