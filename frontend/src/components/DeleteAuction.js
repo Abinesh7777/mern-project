@@ -11,7 +11,7 @@ const DeleteAuction = () => {
   useEffect(() => {
     const deleteAuction = async () => {
       try {
-        await axios.delete(`http://localhost:5000/api/auctions/${id}`);
+        await axios.delete(`https://mern-project-3-fjd3.onrender.com/api/auctions/${id}`);
         navigate('/auctions');
       } catch (err) {
         console.error('Auction deletion failed', err);

@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/auction3', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://aucc:auc@cluster0.omucekz.mongodb.net/notes?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

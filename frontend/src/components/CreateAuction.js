@@ -36,7 +36,7 @@ const CreateAuction = ({ user }) => {
     if (image) formDataObj.append('image', image);
 
     try {
-      await axios.post('http://localhost:5000/api/auctions', formDataObj, {
+      await axios.post('https://mern-project-3-fjd3.onrender.com/api/auctions', formDataObj, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

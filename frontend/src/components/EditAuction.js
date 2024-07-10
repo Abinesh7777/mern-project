@@ -15,7 +15,7 @@ const EditAuction = () => {
   useEffect(() => {
     const fetchAuction = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/auctions/${id}`);
+        const res = await axios.get(`https://mern-project-3-fjd3.onrender.com/api/auctions/${id}`);
         const auction = res.data;
         setTitle(auction.title);
         setDescription(auction.description);
@@ -42,7 +42,7 @@ const EditAuction = () => {
     formData.append('imageUrl', imageUrl);
 
     try {
-      await axios.put(`http://localhost:5000/api/auctions/${id}`, formData, {
+      await axios.put(`https://mern-project-3-fjd3.onrender.com/api/auctions/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -159,7 +159,7 @@ const EditAuction = () => {
             />
             {imageUrl && (
               <img
-                src={`http://localhost:5000/${imageUrl}`}
+                src={`https://mern-project-3-fjd3.onrender.com/${imageUrl}`}
                 alt={title}
                 style={{ width: '100px', height: '100px', marginTop: '10px' }}
               />

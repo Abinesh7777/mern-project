@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
     setError(null);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
+      const res = await axios.post('https://mern-project-3-fjd3.onrender.com/api/users/login', { email, password });
       setUser(res.data.user); // Set the user data in App component
       navigate('/home');
     } catch (err) {
